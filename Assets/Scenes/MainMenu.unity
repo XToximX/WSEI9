@@ -11734,7 +11734,7 @@ MonoBehaviour:
   qualityDropdown: {fileID: 542829532}
   fullScreenToggle: {fileID: 1158177859}
   resolutionDropdown: {fileID: 1738620065}
-  _newGameLevel: level1
+  _newGameLevel: Game
   noSavedGameDialog: {fileID: 1153819105}
 --- !u!4 &1541783477
 Transform:
