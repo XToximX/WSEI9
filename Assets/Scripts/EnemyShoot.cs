@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyShoot : MonoBehaviour
 {
+    [SerializeField] Transform shootingPoint;
     [SerializeField] float fireRate = 1f;
     [SerializeField] GameObject bulletPrefab;
     private GameObject player;
@@ -13,6 +14,13 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+
+        Vector2 dir = (player.transform.position - transform.position).normalized;
+        var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, q - 90f);
+
+
+        StartCoroutine(Shooting());
     }
 
     // Update is called once per frame
@@ -24,8 +32,19 @@ public class EnemyShoot : MonoBehaviour
 
     IEnumerator Shooting()
     {
-        Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(1f / fireRate);
+        while (true)
+        {
+            Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
+            yield return new WaitForSeconds(1f / fireRate);
+        }
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

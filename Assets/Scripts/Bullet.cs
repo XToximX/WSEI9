@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        
 
         var dir = player.position - transform.position;
         rb.linearVelocity = dir.normalized * speed;
@@ -24,10 +25,14 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lastHit= Time.deltaTime;
+        lastHit -= Time.deltaTime;
 
-        if(Physics2D.OverlapCircle(transform.position, .2f, shieldLayer) != null && lastHit < 0f)
+        var hit = Physics2D.OverlapCircle(transform.position, .3f, shieldLayer);
+
+        if (hit != null && lastHit < 0f)
         {
+            if (hit.gameObject.CompareTag("Enemy"))
+                hit.gameObject.SetActive(false);
             lastHit = 1f;
             Reflect();
         }
@@ -35,12 +40,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        print(2);
+        if (collision.gameObject.CompareTag("Player"))
+            Destroy(gameObject);
     }
 
     private void Reflect()
     {
         rb.linearVelocity *= -1;
-
     }
 }
