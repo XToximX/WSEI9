@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      logo_WSEI_0: -1830671373024840540
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
