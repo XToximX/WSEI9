@@ -9,8 +9,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject shieldPivot;
 
     private Camera mainCam;
+    private SpriteRenderer shieldSprite;
 
-    public static int shieldMode;
+    public string shieldMode;
     public static int hp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     {
         mainCam = Camera.main;
         hp = baseHP;
+        shieldSprite = GameObject.Find("ShieldSprite").GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -29,5 +31,18 @@ public class Player : MonoBehaviour
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Euler(0f, 0f, q - 90f);
+
+
+        //Setting shield type
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            shieldMode = "Tank";
+            shieldSprite.color = Color.blue;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            shieldMode = "Fast";
+            shieldSprite.color = Color.red;
+        }
     }
 }

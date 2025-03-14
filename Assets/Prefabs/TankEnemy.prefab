@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1491025657feece439f2df4ab570a053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyType: Tank
   shootingPoint: {fileID: 2424900339026575862}
   fireRate: 0.5
   bulletPrefab: {fileID: 3309048850026675594, guid: ae17de60d51ddbc4fae669fe3d05bc2c, type: 3}

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] LayerMask shieldLayer;
 
-
+    public string bulletType;
     private Transform player;
     private Rigidbody2D rb;
     private float lastHit = 0f;
@@ -25,6 +25,9 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Abs(transform.position.x) > 15 || Mathf.Abs(transform.position.y) > 10)
+            Destroy(gameObject);
+
         lastHit -= Time.deltaTime;
 
         var hit = Physics2D.OverlapCircle(transform.position, .3f, shieldLayer);
@@ -32,9 +35,15 @@ public class Bullet : MonoBehaviour
         if (hit != null && lastHit < 0f)
         {
             if (hit.gameObject.CompareTag("Enemy"))
+            {
                 hit.gameObject.SetActive(false);
+                Reflect();
+            }
+            else if (player.gameObject.GetComponent<Player>().shieldMode == bulletType)
+                Reflect();
+            else
+                Destroy(gameObject);
             lastHit = 1f;
-            Reflect();
         }
     }
 
@@ -47,5 +56,23 @@ public class Bullet : MonoBehaviour
     private void Reflect()
     {
         rb.linearVelocity *= -1;
+    }
+
+    public void SetType(string enemyType)
+    {
+        bulletType = enemyType;
+
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+
+        switch (bulletType)
+        {
+            case "Tank":
+                sprite.color = Color.blue;
+                break;
+            case "Fast":
+                sprite.color = Color.red;
+                break;
+        }
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class EnemyShoot : MonoBehaviour
 {
+    [SerializeField] string enemyType;
     [SerializeField] Transform shootingPoint;
     [SerializeField] float fireRate = 1f;
     [SerializeField] GameObject bulletPrefab;
@@ -34,7 +35,8 @@ public class EnemyShoot : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
+            bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
+            bullet.GetComponent<Bullet>().SetType(enemyType);
             yield return new WaitForSeconds(1f / fireRate);
         }
     }
