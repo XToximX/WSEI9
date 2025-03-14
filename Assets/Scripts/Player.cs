@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -14,15 +15,20 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject shieldPivot;
     public GameObject dupochron;
 
-    
-    private float shieldCooldown = 0f;
+    [Header("PickUps")]
+    [SerializeField] List<GameObject> pickUps;
+    [SerializeField] float pickUpTime = 5f;
 
+    private float shieldCooldown = 0f;
 
     private Camera mainCam;
     private SpriteRenderer shieldSprite;
+    private SpriteRenderer secShieldSprite;
 
-    public string shieldMode;
-    public static int hp;
+
+    [Space] [Space]
+    public string shieldMode = "Tank";
+    public int hp;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +36,7 @@ public class Player : MonoBehaviour
         mainCam = Camera.main;
         hp = baseHP;
         shieldSprite = GameObject.Find("ShieldSprite").GetComponent<SpriteRenderer>();
+        secShieldSprite = pickUps[0].GetComponent<SpriteRenderer>();
 
         dupochron.SetActive(false);
     }
@@ -53,15 +60,20 @@ public class Player : MonoBehaviour
         }
 
         //Setting shield type
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             shieldMode = "Tank";
+
             shieldSprite.color = Color.blue;
+            secShieldSprite.color = Color.blue;
+
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             shieldMode = "Fast";
+
             shieldSprite.color = Color.red;
+            secShieldSprite.color = Color.red;
         }
     }
 
@@ -70,14 +82,18 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet") && hp > 0)
         {
             hp--;
-            Debug.Log("bum");
+            //Debug.Log("bum");
         }
         
         if (hp == 0)
         {
-            Debug.Log("BUM BUM");
+            //Debug.Log("BUM BUM");
         }
-            
+    }
+
+    public void RandomPickUp()
+    {
+        StartCoroutine(PickUp(pickUps[(int)Mathf.Floor(Random.Range(0, (float)pickUps.Count - 0.01f))]));
     }
 
     IEnumerator Dupochron()
@@ -86,5 +102,12 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(shieldTime);
         dupochron.SetActive(false);
         shieldCooldown = baseShieldCooldown;
+    }
+
+    IEnumerator PickUp(GameObject obj)
+    {
+        obj.SetActive(true);
+        yield return new WaitForSeconds(pickUpTime);
+        obj.SetActive(false);
     }
 }

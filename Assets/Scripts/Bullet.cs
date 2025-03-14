@@ -42,16 +42,25 @@ public class Bullet : MonoBehaviour
                 Reflect();
             }
             else if (playerScript.shieldMode == bulletType || playerScript.dupochron.activeSelf == true)
+            {
                 Reflect();
+                if(!playerScript.dupochron.activeSelf)
+                    ScoreCounter.AddScore(50);
+                else
+                    ScoreCounter.AddScore(10);
+            }
             else
+            {
+                ScoreCounter.AddScore(25);
                 Destroy(gameObject);
+            }
             lastHit = 1f;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Shield"))
             Destroy(gameObject);
     }
 

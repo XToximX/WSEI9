@@ -30,9 +30,10 @@ public class EnemyMgr : MonoBehaviour
             {
                 enemyPos = Random.insideUnitCircle.normalized * spawnRange;
                 enemyPos = new Vector2(enemyPos.x * 1.5f, enemyPos.y);
-            } while (Physics2D.OverlapCircle(enemyPos, 0.3f) != null);
+            } while (Physics2D.OverlapCircle(enemyPos, 1f) != null);
 
-            Instantiate(enemyList[(int)Mathf.Floor(Random.Range(0f, enemyList.Count))], enemyPos, Quaternion.identity);
+            print((int)Mathf.Floor(Random.Range(0f, (float)enemyList.Count - 0.01f)));
+            Instantiate(enemyList[(int)Mathf.Floor(Random.Range(0f, (float)enemyList.Count - 0.1f))], enemyPos, Quaternion.identity);
         
             yield return new WaitForSeconds(spawnDelay);
         }
