@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] float baseShieldCooldown = 5f;
 
     [Header("Refences")]
-    [SerializeField] GameObject shieldPivot;
+    [SerializeField] Transform shieldPivot;
     public GameObject dupochron;
 
     [Header("PickUps")]
@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
         Vector2 dir = (mousePos - Vector2.zero).normalized;
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0f, 0f, q - 90f);
+        shieldPivot.rotation = Quaternion.Euler(0f, 0f, q - 90f);
 
         //Dupochron
         if(Input.GetKeyDown(KeyCode.Space) && shieldCooldown < 0f && !dupochron.activeSelf)

@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
                 hit.gameObject.SetActive(false);
                 Reflect();
             }
-            else if (playerScript.shieldMode == bulletType || playerScript.dupochron.activeSelf == true)
+            else if (playerScript.shieldMode == bulletType || hit.CompareTag("Dupochron"))
             {
                 Reflect();
                 if(!playerScript.dupochron.activeSelf)
