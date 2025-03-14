@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
 
     public string bulletType;
     private Transform player;
+    private Player playerScript;
     private Rigidbody2D rb;
     private float lastHit = 0f;
 
@@ -15,6 +16,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        playerScript = player.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
         
 
@@ -39,7 +41,7 @@ public class Bullet : MonoBehaviour
                 hit.gameObject.SetActive(false);
                 Reflect();
             }
-            else if (player.gameObject.GetComponent<Player>().shieldMode == bulletType)
+            else if (playerScript.shieldMode == bulletType || playerScript.dupochron.activeSelf == true)
                 Reflect();
             else
                 Destroy(gameObject);
