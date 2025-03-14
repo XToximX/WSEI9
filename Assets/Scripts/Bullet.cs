@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     private Transform player;
     private Player playerScript;
     private Rigidbody2D rb;
-    private float lastHit = 0f;
+    private float lastHit = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +22,9 @@ public class Bullet : MonoBehaviour
 
         var dir = player.position - transform.position;
         rb.linearVelocity = dir.normalized * speed;
+
+        var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, q - 90f);
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class Bullet : MonoBehaviour
 
         lastHit -= Time.deltaTime;
 
-        var hit = Physics2D.OverlapCircle(transform.position, .3f, shieldLayer);
+        var hit = Physics2D.OverlapCircle(transform.position, .4f, shieldLayer);
 
         if (hit != null && lastHit < 0f)
         {

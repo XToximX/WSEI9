@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     [Space] [Space]
     public string shieldMode = "Tank";
     public int hp;
+    public static bool powerUpActive = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -106,8 +107,10 @@ public class Player : MonoBehaviour
 
     IEnumerator PickUp(GameObject obj)
     {
+        powerUpActive = true;
         obj.SetActive(true);
         yield return new WaitForSeconds(pickUpTime);
+        powerUpActive = false;
         obj.SetActive(false);
     }
 }

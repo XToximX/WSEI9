@@ -18,7 +18,7 @@ public class EnemyShoot : MonoBehaviour
 
         Vector2 dir = (player.transform.position - transform.position).normalized;
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, q - 90f);
+        transform.rotation = Quaternion.Euler(0f, 0f, q + 180f);
 
 
         StartCoroutine(Shooting());
@@ -45,6 +45,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Bullet"))
         {
+            ScoreCounter.AddScore(25);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
