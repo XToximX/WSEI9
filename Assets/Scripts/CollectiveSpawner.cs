@@ -14,6 +14,11 @@ public class CollectiveSpawner : MonoBehaviour
         StartCoroutine(CollectSpawner());
     }
 
+    public void LvlUp()
+    {
+        spawnTime -= 0.1f;
+    }
+
     IEnumerator CollectSpawner()
     {
         while(true)
