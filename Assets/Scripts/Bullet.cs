@@ -46,6 +46,8 @@ public class Bullet : MonoBehaviour
             }
             else if (playerScript.shieldMode == bulletType || hit.CompareTag("Dupochron"))
             {
+                GameObject.Find("SoundMgr").GetComponent<SoundMgr>().PlaySFX(3);
+
                 Reflect();
                 if(!playerScript.dupochron.activeSelf)
                     ScoreCounter.AddScore(50);
@@ -63,7 +65,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Shield"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Shield") || collision.gameObject.CompareTag("Dupochron"))
             Destroy(gameObject);
     }
 

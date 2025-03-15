@@ -9,6 +9,7 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] Slider xpBar;
     [SerializeField] GameObject lvlUpMenu;
     [SerializeField] EnemyMgr enemyMgr;
+    [SerializeField] SoundMgr soundMgr;
 
     private static int score;
 
@@ -47,15 +48,20 @@ public class ScoreCounter : MonoBehaviour
 
     public void LvlUp()
     {
+
         Time.timeScale = 0f;
         lvlUpMenu.SetActive(true);
 
-        if(enemyMgr.spawnDelay > 1f)
-            enemyMgr.spawnDelay -= 0.2f;
+        if(enemyMgr.spawnDelay > 2f)
+            enemyMgr.spawnDelay -= 0.05f;
+        if (enemyMgr.spawnDelay < 3 && soundMgr.currTrack != 1)
+            soundMgr.changeMusic(1);
+
     }
 
     public void EndLvlUp()
     {
+
         currentxP = 0;
         Time.timeScale = 1f;
         lvlUpMenu.SetActive(false);
