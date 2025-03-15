@@ -31,7 +31,13 @@ public class ScoreCounter : MonoBehaviour
     {
         lvlUpMenu.SetActive(false);
         StartCoroutine(ScoreUp());
-    }
+
+        score = 0;
+        enemiesKilled = 0;
+        bulletsReflected = 0;
+        collectibles = 0;
+        currentxP = 0;
+}
 
     // Update is called once per frame
     void Update()
@@ -97,7 +103,7 @@ public class ScoreCounter : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Game 111");
     }
 
     public void QuitGame()
