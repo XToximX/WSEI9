@@ -969,7 +969,7 @@ MonoBehaviour:
   pickUps:
   - {fileID: 1613052745}
   pickUpTime: 5
-  lvlUpMenu: {fileID: 1652889280}
+  lvlUpMenu: {fileID: 0}
   shieldMode: 
   hp: 0
 --- !u!212 &975300054
@@ -2278,9 +2278,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1691758583}
-  xpBar: {fileID: 1038325278}
-  lvlUpMenu: {fileID: 1652889280}
-  enemyMgr: {fileID: 1541383919}
+  xpBar: {fileID: 0}
+  lvlUpMenu: {fileID: 0}
+  enemyMgr: {fileID: 0}
 --- !u!4 &1583645831
 Transform:
   m_ObjectHideFlags: 0
