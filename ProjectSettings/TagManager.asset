@@ -10,6 +10,7 @@ TagManager:
   - Dupochron
   - Collect
   - Sound
+  - ComboSound
   layers:
   - Default
   - TransparentFX

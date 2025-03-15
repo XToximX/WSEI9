@@ -18,6 +18,7 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] GameObject deathCanva;
     [SerializeField] TMP_Text multDisplay;
 
+    private static AudioSource comboSound;
     private static float score;
     private float timer = 0f;
     public static int enemiesKilled = 0;
@@ -43,6 +44,10 @@ public class ScoreCounter : MonoBehaviour
         bulletsReflected = 0;
         collectibles = 0;
         currentxP = 0;
+        maxCombo = 0;
+        combo = 0;
+
+        comboSound = GameObject.FindGameObjectWithTag("ComboSound").GetComponent<AudioSource>();
 }
 
     // Update is called once per frame
@@ -69,11 +74,19 @@ public class ScoreCounter : MonoBehaviour
         currentxP += value;
     }
 
+    public static void AddCombo(int value)
+    {
+        comboSound.Play();
+        comboSound.pitch += 0.05f;
+        combo += value;
+    }
+
     public static void ComboBreak()
     {
         if(combo > maxCombo)
             maxCombo = combo;
 
+        comboSound.pitch = 1f;
         combo = 0;
     }
 
