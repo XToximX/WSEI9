@@ -8,6 +8,8 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] float fireRate = 1f;
     [SerializeField] GameObject bulletPrefab;
     private GameObject player;
+    private GameObject lvlUpMenu;
+
 
     private GameObject bullet;
 
@@ -15,6 +17,7 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        //lvlUpMenu = player.GetComponent<Player>().lvlUpMenu;
 
         Vector2 dir = (player.transform.position - transform.position).normalized;
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -35,9 +38,12 @@ public class EnemyShoot : MonoBehaviour
     {
         while (true)
         {
-            bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
-            bullet.GetComponent<Bullet>().SetType(enemyType);
-            yield return new WaitForSeconds(1f / fireRate);
+            if(true)
+            {
+                bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
+                bullet.GetComponent<Bullet>().SetType(enemyType);
+                yield return new WaitForSeconds(1f / fireRate);
+            }
         }
     }
 
