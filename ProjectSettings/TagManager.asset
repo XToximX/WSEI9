@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Dupochron
   - Collect
+  - Sound
   layers:
   - Default
   - TransparentFX

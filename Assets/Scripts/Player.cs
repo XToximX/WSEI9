@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -8,13 +9,15 @@ public class Player : MonoBehaviour
     [SerializeField] int baseHP = 5;
 
     [Header("Dupochron")]
-    [SerializeField] float shieldTime = 1f;
+    [SerializeField] float shieldTime = 1.5f;
     [SerializeField] float baseShieldCooldown = 5f;
 
     [Header("Refences")]
     [SerializeField] Transform shieldPivot;
     [SerializeField] SoundMgr soundMgr;
     [SerializeField] ScoreCounter scoreCounter;
+    [SerializeField] private Slider shieldSlider;
+    [SerializeField] Slider hpSldier;
     public GameObject dupochron;
 
     [Header("PickUps")]
@@ -39,7 +42,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        instance = this.gameObject;
+        instance = gameObject;
         Time.timeScale = 1f;
         hp = baseHP;
     }
@@ -53,12 +56,20 @@ public class Player : MonoBehaviour
         secShieldSprite = pickUps[0].GetComponent<SpriteRenderer>();
 
         dupochron.SetActive(false);
+
+
+        shieldMode = "Tank";
+
+        shieldSprite.color = Color.blue;
+        secShieldSprite.color = Color.blue;
     }
 
     // Update is called once per frame
     void Update()
     {
         shieldCooldown -= Time.deltaTime;
+        if (shieldCooldown > 0f)
+            shieldSlider.value = (baseShieldCooldown - shieldCooldown) / baseShieldCooldown;
 
         Vector2 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
@@ -69,12 +80,13 @@ public class Player : MonoBehaviour
             shieldPivot.rotation = Quaternion.Euler(0f, 0f, q - 90f);
 
         //Dupochron
-        if(Input.GetKeyDown(KeyCode.Space) && shieldCooldown < 0f && !dupochron.activeSelf)
+        if(Input.GetKeyDown(KeyCode.W) && shieldCooldown < 0f && !dupochron.activeSelf)
         {
             StartCoroutine(Dupochron());
         }
 
         //Setting shield type
+        /*
         if (Input.GetKeyDown(KeyCode.A))
         {
             shieldMode = "Tank";
@@ -90,6 +102,24 @@ public class Player : MonoBehaviour
             shieldSprite.color = Color.red;
             secShieldSprite.color = Color.red;
         }
+        */
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            if(shieldMode == "Tank")
+            {
+                shieldMode = "Fast";
+
+                shieldSprite.color = Color.red;
+                secShieldSprite.color = Color.red;
+            }
+            else
+            {
+                shieldMode = "Tank";
+
+                shieldSprite.color = Color.blue;
+                secShieldSprite.color = Color.blue;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,7 +130,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet") && hp > 0)
         {
             hp--;
-            //Debug.Log("bum");
+            hpSldier.value--;
+            soundMgr.PlaySFX(6);
         }
         
         if (hp == 0)
@@ -132,15 +163,20 @@ public class Player : MonoBehaviour
         dupochron.SetActive(false);
         shieldCooldown = baseShieldCooldown;
         soundMgr.PlaySFX(4);
-
     }
 
     IEnumerator PickUp(GameObject obj)
     {
-        powerUpActive = true;
-        obj.SetActive(true);
-        yield return new WaitForSeconds(pickUpTime);
-        powerUpActive = false;
-        obj.SetActive(false);
+        if (obj.name != "Heal")
+        {
+            powerUpActive = true;
+            obj.SetActive(true);
+            yield return new WaitForSeconds(pickUpTime);
+            powerUpActive = false;
+            obj.SetActive(false);
+        }
+        else
+            obj.SetActive(true);
+        
     }
 }

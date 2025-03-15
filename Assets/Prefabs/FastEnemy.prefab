@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1449324730325884605}
   - component: {fileID: 7810701443129766889}
   - component: {fileID: 1786075332667144479}
+  - component: {fileID: 5862712318079399051}
   m_Layer: 8
   m_Name: FastEnemy
   m_TagString: Enemy
@@ -139,10 +140,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1491025657feece439f2df4ab570a053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 2377452544799612499, guid: c425ef4cbbfda594883aeaf045d0abf6, type: 3}
   enemyType: Fast
   shootingPoint: {fileID: 2932325071457176725}
   fireRate: 0.5
   bulletPrefab: {fileID: 3309048850026675594, guid: ae17de60d51ddbc4fae669fe3d05bc2c, type: 3}
+  soundMgr: {fileID: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+--- !u!50 &5862712318079399051
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839883209435976923}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1471240235428557421
 GameObject:
   m_ObjectHideFlags: 0

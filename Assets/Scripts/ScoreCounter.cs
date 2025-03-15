@@ -26,6 +26,9 @@ public class ScoreCounter : MonoBehaviour
     private float xpTarget = 500;
     private static float currentxP = 0;
 
+    public static float combo = 0f;
+    private static float maxCombo = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

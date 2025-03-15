@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] LayerMask shieldLayer;
 
+    [SerializeField] SoundMgr soundMgr;
     public string bulletType;
     private Transform player;
     private Player playerScript;
@@ -18,7 +19,8 @@ public class Bullet : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         playerScript = player.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
-        
+
+        soundMgr = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundMgr>();
 
         var dir = player.position - transform.position;
         rb.linearVelocity = dir.normalized * speed;
@@ -52,8 +54,8 @@ public class Bullet : MonoBehaviour
                 else
                     ScoreCounter.AddScore(10);
                 ScoreCounter.bulletsReflected += 1;
-                //GameObject.Find("SoundMgr").GetComponent<SoundMgr>().PlaySFX(3);
 
+                soundMgr.PlaySFX(3);
             }
             else
             {

@@ -30,17 +30,23 @@ public class EnemyMgr : MonoBehaviour
             {
                 enemyPos = Random.insideUnitCircle.normalized * spawnRange;
                 enemyPos = new Vector2(enemyPos.x * 1.5f, enemyPos.y);
-                var hit = Physics2D.OverlapCircle(enemyPos, 1f);
 
-                if (hit == null)
+                var hit1 = Physics2D.OverlapCircle(enemyPos, 1f);
+                var hit2 = Physics2D.OverlapCircle(enemyPos * 1.2f, 1f);
+                var hit3 = Physics2D.OverlapCircle(enemyPos * 1.4f, 1f);
+
+                if (hit1 == null && hit2 == null && hit3 == null)
                     break;
 
                 yield return new WaitForEndOfFrame();
             }
 
+            Vector3 spawnPos = enemyPos * 1.5f;
+
             //print((int)Mathf.Floor(Random.Range(0f, (float)enemyList.Count - 0.01f)));
-            Instantiate(enemyList[(int)Mathf.Floor(Random.Range(0f, (float)enemyList.Count - 0.1f))], enemyPos, Quaternion.identity);
-        
+            GameObject enemy = Instantiate(enemyList[(int)Mathf.Floor(Random.Range(0f, (float)enemyList.Count - 0.1f))], spawnPos, Quaternion.identity);
+            enemy.GetComponent<EnemyShoot>().targetPos = enemyPos;
+
             yield return new WaitForSeconds(spawnDelay);
         }
     }

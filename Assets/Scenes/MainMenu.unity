@@ -4110,7 +4110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4302285031048887679, guid: f04773edaebea7149bec56962bf81368, type: 3}
+  m_Sprite: {fileID: -5594584206425307812, guid: c8233dd4be4c8194f91d7f887c96490b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6320,8 +6320,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "obracaj\u0105c myszk\u0105 blokujesz pociski,\nz\u0142ota gwiazdka daje
-    stawia ci tarcze \nza plecami na kr\xF3tk\u0105 chwile."
+  m_text: "Obracaj tarcz\u0119 za pomoca myszki i mieniaj jej tryb przyciskiem Spacja,
+    zeby odbijac pociski w odpowiadajacych kolorach"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
@@ -7284,10 +7284,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "odbijaj pociski i zdobywaj power up'y, kt\xF3re z czasem u\u0142atwij\u0105
-    ci rozgrywk\u0119. R\xF3wnie\u017C powiniene\u015B wiedzie\u0107, \u017Ce pod
-    spacj\u0105 mo\u017Cesz stworzy\u0107 chwilow\u0105 tarcz\u0119 dooko\u0142a
-    siebie."
+  m_text: Pamietaj tez, ze pod przyciskiem W, masz chwilowa tarcze ktora odbroni
+    cie przed zagrorzeniem, daj sie rowniez trafic gwizda gdyz daja chwilowe power
+    up'y
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
@@ -12998,7 +12997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4682962041929420971, guid: 83d1c5c87a9a0e745ab0146d85f69673, type: 3}
+  m_Sprite: {fileID: -635525064813502491, guid: 8d1b87ebc1809364c8f281c06d01ba18, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14438,8 +14437,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Autors:\n   -Tomasz Lech\n   -Artur Bro\u0144czyk\n   -Adrian Sarna\n  
-    -Maciej Winnicki"
+  m_text: "Authors:\n   -Tomasz Lech\n   -Artur Bro\u0144czyk\n   -Adrian Sarna\n  
+    -Maciej Winnicki\n\nLESARVIBRO"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
@@ -14575,9 +14574,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "naciskaj\u0105c odpowiednio na klawiaturze\nA albo B, twoja tarcza zmienia
-    kolor na\nniebieski b\u0105d\u017A czerwony. Kolor tarczy dopasowany do pocisku
-    go odbija."
+  m_text: Zdobywaj punky, odbiajac pociski i niszczac wrogow, jak zdobedziesz odpowiednio,
+    wybierz swoje ulepszenie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
