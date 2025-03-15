@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         Vector2 dir = (mousePos - Vector2.zero).normalized;
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        if(lvlUpMenu.activeSelf)
+        if(!lvlUpMenu.activeSelf)
             shieldPivot.rotation = Quaternion.Euler(0f, 0f, q - 90f);
 
         //Dupochron

@@ -17,7 +17,7 @@ public class EnemyShoot : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
-        lvlUpMenu = player.GetComponent<Player>().lvlUpMenu;
+        //lvlUpMenu = player.GetComponent<Player>().lvlUpMenu;
 
         Vector2 dir = (player.transform.position - transform.position).normalized;
         var q = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
@@ -38,7 +38,7 @@ public class EnemyShoot : MonoBehaviour
     {
         while (true)
         {
-            if(lvlUpMenu.activeSelf)
+            if(true)
             {
                 bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
                 bullet.GetComponent<Bullet>().SetType(enemyType);

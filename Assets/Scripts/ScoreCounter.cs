@@ -8,6 +8,7 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] TMP_Text scoreDisplay;
     [SerializeField] Slider xpBar;
     [SerializeField] GameObject lvlUpMenu;
+    [SerializeField] EnemyMgr enemyMgr;
 
     private static int score;
 
@@ -48,6 +49,9 @@ public class ScoreCounter : MonoBehaviour
     {
         Time.timeScale = 0f;
         lvlUpMenu.SetActive(true);
+
+        if(enemyMgr.spawnDelay > 1f)
+            enemyMgr.spawnDelay -= 0.2f;
     }
 
     public void EndLvlUp()
@@ -55,6 +59,7 @@ public class ScoreCounter : MonoBehaviour
         Time.timeScale = 1f;
         lvlUpMenu.SetActive(false);
         currentxP = 0;
+        xpTarget *= 0.2f;
     }
     
     IEnumerator ScoreUp()

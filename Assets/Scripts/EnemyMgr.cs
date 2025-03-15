@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EnemyMgr : MonoBehaviour
 {
-    [SerializeField] float spawnDelay = 5f;
+    public float spawnDelay = 5f;
     [SerializeField] float spawnRange = 5f;
 
     [SerializeField] List<GameObject> enemyList;
