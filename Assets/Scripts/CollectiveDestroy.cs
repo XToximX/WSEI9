@@ -12,6 +12,7 @@ public class CollectiveDestroy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             ScoreCounter.AddScore(200);
+            ScoreCounter.collectibles++;
             collision.gameObject.GetComponent<Player>().RandomPickUp();
         }
         Destroy(gameObject);

@@ -52,6 +52,7 @@ public class EnemyShoot : MonoBehaviour
         if(collision.gameObject.CompareTag("Bullet"))
         {
             ScoreCounter.AddScore(25);
+            ScoreCounter.enemiesKilled++;
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

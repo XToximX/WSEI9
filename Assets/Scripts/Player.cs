@@ -13,13 +13,15 @@ public class Player : MonoBehaviour
 
     [Header("Refences")]
     [SerializeField] Transform shieldPivot;
+    [SerializeField] SoundMgr soundMgr;
+    [SerializeField] ScoreCounter scoreCounter;
     public GameObject dupochron;
 
     [Header("PickUps")]
     [SerializeField] List<GameObject> pickUps;
     [SerializeField] float pickUpTime = 5f;
 
-    private float shieldCooldown = 5f;
+    private float shieldCooldown = 0f;
 
     private Camera mainCam;
     private SpriteRenderer shieldSprite;
@@ -33,6 +35,13 @@ public class Player : MonoBehaviour
     public string shieldMode = "Tank";
     public int hp;
     public static bool powerUpActive = false;
+    public static GameObject instance;
+
+    private void Awake()
+    {
+        instance = this.gameObject;
+        Time.timeScale = 1f;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -84,6 +93,9 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Collect"))
+            soundMgr.PlaySFX(4);
+
         if (collision.gameObject.CompareTag("Bullet") && hp > 0)
         {
             hp--;
@@ -92,7 +104,7 @@ public class Player : MonoBehaviour
         
         if (hp == 0)
         {
-            //Debug.Log("BUM BUM");
+            scoreCounter.ImDead();
         }
     }
 
@@ -118,6 +130,8 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(shieldTime);
         dupochron.SetActive(false);
         shieldCooldown = baseShieldCooldown;
+        soundMgr.PlaySFX(4);
+
     }
 
     IEnumerator PickUp(GameObject obj)
