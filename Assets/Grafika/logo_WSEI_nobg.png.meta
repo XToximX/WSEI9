@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 9ab949e8f34e6dc4d84701c4be5bb97d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4007409297838267359
+    second: logo_WSEI_nobg_0
+  - first:
+      213: 8260470064658673351
+    second: logo_WSEI_nobg_1
+  - first:
+      213: 5709757700703936049
+    second: logo_WSEI_nobg_2
+  - first:
+      213: 3761088199379729849
+    second: logo_WSEI_nobg_3
+  - first:
+      213: 369808681538567932
+    second: logo_WSEI_nobg_4
+  - first:
+      213: -3457184721527298191
+    second: logo_WSEI_nobg_5
+  - first:
+      213: -2391245626349507283
+    second: logo_WSEI_nobg_6
+  - first:
+      213: -7009251490747381185
+    second: logo_WSEI_nobg_7
+  - first:
+      213: 5885386678825593815
+    second: logo_WSEI_nobg_8
+  - first:
+      213: -6702232985630755235
+    second: logo_WSEI_nobg_9
+  - first:
+      213: 2053062530129242919
+    second: logo_WSEI_nobg_10
+  - first:
+      213: -2893794064792804513
+    second: logo_WSEI_nobg_11
+  - first:
+      213: 1374711561852726020
+    second: logo_WSEI_nobg_12
+  - first:
+      213: 4760707636218432080
+    second: logo_WSEI_nobg_13
+  - first:
+      213: 827657262714551382
+    second: logo_WSEI_nobg_14
+  - first:
+      213: -2245644516403449614
+    second: logo_WSEI_nobg_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 567
+        width: 650
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb5f33368d2d9730800000000000000
+      internalID: 4007409297838267359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_1
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 538
+        width: 102
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce6ab902c513a270800000000000000
+      internalID: 8260470064658673351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 458
+        width: 261
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e520090622d3f40800000000000000
+      internalID: 5709757700703936049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_3
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 538
+        width: 102
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bd31fc4ac1123430800000000000000
+      internalID: 3761088199379729849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_4
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 468
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe36f95903d12500800000000000000
+      internalID: 369808681538567932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 468
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 177257e00dc9500d0800000000000000
+      internalID: -3457184721527298191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_6
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 410
+        width: 494
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d2bbea5c690ded0800000000000000
+      internalID: -2391245626349507283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 358
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a00a0e7e22abe90800000000000000
+      internalID: -7009251490747381185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_8
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 358
+        width: 310
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db273590081da150800000000000000
+      internalID: 5885386678825593815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_9
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 358
+        width: 44
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56b2990c92ecf2a0800000000000000
+      internalID: -6702232985630755235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_10
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 258
+        width: 59
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ba40a5e71fd7c10800000000000000
+      internalID: 2053062530129242919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_11
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 306
+        width: 185
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5324ea41ad27d7d0800000000000000
+      internalID: -2893794064792804513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_12
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 258
+        width: 60
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40baad8c1e4f31310800000000000000
+      internalID: 1374711561852726020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_13
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 243
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a0a403f5e611240800000000000000
+      internalID: 4760707636218432080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_14
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 172
+        width: 33
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65c7fd335ed6c7b00800000000000000
+      internalID: 827657262714551382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: logo_WSEI_nobg_15
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 243
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f0f7f3d53ed5d0e0800000000000000
+      internalID: -2245644516403449614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      logo_WSEI_nobg_0: 4007409297838267359
+      logo_WSEI_nobg_1: 8260470064658673351
+      logo_WSEI_nobg_10: 2053062530129242919
+      logo_WSEI_nobg_11: -2893794064792804513
+      logo_WSEI_nobg_12: 1374711561852726020
+      logo_WSEI_nobg_13: 4760707636218432080
+      logo_WSEI_nobg_14: 827657262714551382
+      logo_WSEI_nobg_15: -2245644516403449614
+      logo_WSEI_nobg_2: 5709757700703936049
+      logo_WSEI_nobg_3: 3761088199379729849
+      logo_WSEI_nobg_4: 369808681538567932
+      logo_WSEI_nobg_5: -3457184721527298191
+      logo_WSEI_nobg_6: -2391245626349507283
+      logo_WSEI_nobg_7: -7009251490747381185
+      logo_WSEI_nobg_8: 5885386678825593815
+      logo_WSEI_nobg_9: -6702232985630755235
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
