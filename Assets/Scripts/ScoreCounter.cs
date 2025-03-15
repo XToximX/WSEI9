@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreCounter : MonoBehaviour
 {
@@ -10,8 +12,16 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] GameObject lvlUpMenu;
     [SerializeField] EnemyMgr enemyMgr;
     [SerializeField] SoundMgr soundMgr;
+    [SerializeField] List<TMP_Text> stats;
+    [SerializeField] GameObject canva;
+    [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject deathCanva;
 
     private static int score;
+    private float timer = 0f;
+    public static int enemiesKilled = 0;
+    public static int bulletsReflected = 0;
+    public static int collectibles = 0;
 
     private float xpTarget = 500;
     private static float currentxP = 0;
@@ -26,6 +36,8 @@ public class ScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+
         DisplayScore();
         xpBar.value = currentxP / xpTarget;
 
@@ -61,13 +73,38 @@ public class ScoreCounter : MonoBehaviour
 
     public void EndLvlUp()
     {
-
         currentxP = 0;
         Time.timeScale = 1f;
         lvlUpMenu.SetActive(false);
         xpTarget *= 1.2f;
     }
-    
+
+    public void ImDead()
+    {
+        pauseMenu.SetActive(false);
+        soundMgr.PlaySFX(0);
+        Time.timeScale = 0f;
+        canva.SetActive(false);
+        deathCanva.SetActive(true);
+        Player.instance.SetActive(false);
+
+        stats[0].text = stats[0].text + Mathf.Floor(timer).ToString();
+        stats[1].text = stats[1].text + score.ToString();
+        stats[2].text = stats[2].text + enemiesKilled.ToString();
+        stats[3].text = stats[3].text + bulletsReflected.ToString();
+        stats[4].text = stats[4].text + collectibles.ToString();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator ScoreUp()
     {
         while(true)

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [Header("Refences")]
     [SerializeField] Transform shieldPivot;
     [SerializeField] SoundMgr soundMgr;
+    [SerializeField] ScoreCounter scoreCounter;
     public GameObject dupochron;
 
     [Header("PickUps")]
@@ -34,6 +35,13 @@ public class Player : MonoBehaviour
     public string shieldMode = "Tank";
     public int hp;
     public static bool powerUpActive = false;
+    public static GameObject instance;
+
+    private void Awake()
+    {
+        instance = this.gameObject;
+        Time.timeScale = 1f;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -96,7 +104,7 @@ public class Player : MonoBehaviour
         
         if (hp == 0)
         {
-            //Debug.Log("BUM BUM");
+            scoreCounter.ImDead();
         }
     }
 

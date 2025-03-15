@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
 
         lastHit -= Time.deltaTime;
 
-        var hit = Physics2D.OverlapCircle(transform.position, .4f, shieldLayer);
+        var hit = Physics2D.OverlapCircle(transform.position, .37f, shieldLayer);
 
         if (hit != null && lastHit < 0f)
         {
@@ -46,13 +46,14 @@ public class Bullet : MonoBehaviour
             }
             else if (playerScript.shieldMode == bulletType || hit.CompareTag("Dupochron"))
             {
-                GameObject.Find("SoundMgr").GetComponent<SoundMgr>().PlaySFX(3);
-
                 Reflect();
                 if(!playerScript.dupochron.activeSelf)
                     ScoreCounter.AddScore(50);
                 else
                     ScoreCounter.AddScore(10);
+                ScoreCounter.bulletsReflected += 1;
+                //GameObject.Find("SoundMgr").GetComponent<SoundMgr>().PlaySFX(3);
+
             }
             else
             {
@@ -72,6 +73,7 @@ public class Bullet : MonoBehaviour
     private void Reflect()
     {
         rb.linearVelocity *= -1;
+
     }
 
     public void SetType(string enemyType)

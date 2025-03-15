@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyType: Fast
   shootingPoint: {fileID: 2932325071457176725}
-  fireRate: 0.7
+  fireRate: 0.5
   bulletPrefab: {fileID: 3309048850026675594, guid: ae17de60d51ddbc4fae669fe3d05bc2c, type: 3}
 --- !u!1 &1471240235428557421
 GameObject:
