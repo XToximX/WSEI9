@@ -11,9 +11,15 @@ public class CollectiveDestroy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            ScoreCounter.combo += 2;
             ScoreCounter.AddScore(200);
             ScoreCounter.collectibles++;
             collision.gameObject.GetComponent<Player>().RandomPickUp();
+        }
+        if(collision.gameObject.CompareTag("Shield"))
+        {
+            GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundMgr>().PlaySFX(7);
+            ScoreCounter.ComboBreak();
         }
         Destroy(gameObject);
     }
