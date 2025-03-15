@@ -56,10 +56,10 @@ public class ScoreCounter : MonoBehaviour
 
     public void EndLvlUp()
     {
+        currentxP = 0;
         Time.timeScale = 1f;
         lvlUpMenu.SetActive(false);
-        currentxP = 0;
-        xpTarget *= 0.2f;
+        xpTarget *= 1.2f;
     }
     
     IEnumerator ScoreUp()
