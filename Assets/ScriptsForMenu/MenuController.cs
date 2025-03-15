@@ -77,6 +77,7 @@ public class MenuController : MonoBehaviour
     public void NewGameDialogYes()
     {
         SceneManager.LoadScene(_newGameLevel);
+        Time.timeScale = 1f;
     }
     public void LoadGameDialogYes()
     {
