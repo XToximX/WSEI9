@@ -6320,8 +6320,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Obracaj tarcz\u0119 za pomoca myszki i mieniaj jej tryb przyciskiem Spacja,
-    zeby odbijac pociski w odpowiadajacych kolorach"
+  m_text: Obracaj tarcza za pomoca myszki i zmieniaj jej tryb przyciskiem Spacja,
+    zeby odbijac pociski w odpowiadajacych kolorach
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
@@ -7285,7 +7285,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Pamietaj tez, ze pod przyciskiem W, masz chwilowa tarcze ktora odbroni
-    cie przed zagrorzeniem, daj sie rowniez trafic gwizda gdyz daja chwilowe power
+    cie przed zagrozeniem, daj sie rowniez trafiac gwiazdami gdyz daja chwilowe power
     up'y
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
@@ -14574,8 +14574,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Zdobywaj punky, odbiajac pociski i niszczac wrogow, jak zdobedziesz odpowiednio,
-    wybierz swoje ulepszenie
+  m_text: Zdobywaj punky, odbiajac pociski i niszczac wrogow, gdy zdobedziesz odpowiednio
+    duzo, wybierz swoje ulepszenie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
   m_sharedMaterial: {fileID: -6735453387755781448, guid: 2c6fe9c854ad974408e5511c87ca99cd, type: 2}
