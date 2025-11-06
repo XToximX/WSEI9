@@ -16,8 +16,10 @@ public class ScoreCounter : MonoBehaviour
     [SerializeField] GameObject canva;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject deathCanva;
+    [SerializeField] TMP_Text multDisplay;
 
-    private static int score;
+    private static AudioSource comboSound;
+    private static float score;
     private float timer = 0f;
     public static int enemiesKilled = 0;
     public static int bulletsReflected = 0;
@@ -25,6 +27,11 @@ public class ScoreCounter : MonoBehaviour
 
     private float xpTarget = 500;
     private static float currentxP = 0;
+
+    public static int combo = 0;
+    private static int maxCombo = 0;
+
+    private static float multiplayer = 1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +44,10 @@ public class ScoreCounter : MonoBehaviour
         bulletsReflected = 0;
         collectibles = 0;
         currentxP = 0;
+        maxCombo = 0;
+        combo = 0;
+
+        comboSound = GameObject.FindGameObjectWithTag("ComboSound").GetComponent<AudioSource>();
 }
 
     // Update is called once per frame
@@ -51,16 +62,37 @@ public class ScoreCounter : MonoBehaviour
         {
             LvlUp();
         }
+
+        multiplayer = 1f + 0.1f * combo;
+        multDisplay.transform.localScale = new Vector2(multiplayer, multiplayer);
+        multDisplay.text = multiplayer.ToString();
     }
     
     public static void AddScore(int value)
     {
-        score += value;
+        score += value * multiplayer;
         currentxP += value;
+    }
+
+    public static void AddCombo(int value)
+    {
+        comboSound.Play();
+        comboSound.pitch += 0.05f;
+        combo += value;
+    }
+
+    public static void ComboBreak()
+    {
+        if(combo > maxCombo)
+            maxCombo = combo;
+
+        comboSound.pitch = 1f;
+        combo = 0;
     }
 
     private void DisplayScore()
     {
+        score = Mathf.Floor(score);
         scoreDisplay.text = "Score: " + score.ToString();
     }
 
@@ -99,6 +131,7 @@ public class ScoreCounter : MonoBehaviour
         stats[2].text = stats[2].text + enemiesKilled.ToString();
         stats[3].text = stats[3].text + bulletsReflected.ToString();
         stats[4].text = stats[4].text + collectibles.ToString();
+        stats[5].text = stats[5].text + maxCombo.ToString();
     }
 
     public void Restart()
@@ -115,7 +148,7 @@ public class ScoreCounter : MonoBehaviour
     {
         while(true)
         {
-            score += 5;
+            score += (5 * multiplayer);
             currentxP += 5;
             yield return new WaitForSeconds(1);
         }

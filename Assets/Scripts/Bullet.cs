@@ -6,11 +6,13 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 2f;
     [SerializeField] LayerMask shieldLayer;
 
+    [SerializeField] SoundMgr soundMgr;
     public string bulletType;
     private Transform player;
     private Player playerScript;
     private Rigidbody2D rb;
     private float lastHit = 1f;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +20,8 @@ public class Bullet : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         playerScript = player.GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
-        
+
+        soundMgr = GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundMgr>();
 
         var dir = player.position - transform.position;
         rb.linearVelocity = dir.normalized * speed;
@@ -52,11 +55,15 @@ public class Bullet : MonoBehaviour
                 else
                     ScoreCounter.AddScore(10);
                 ScoreCounter.bulletsReflected += 1;
-                //GameObject.Find("SoundMgr").GetComponent<SoundMgr>().PlaySFX(3);
 
+                ScoreCounter.combo++;
+
+                soundMgr.PlaySFX(3);
             }
             else
             {
+                ScoreCounter.ComboBreak();
+                soundMgr.PlaySFX(7);
                 ScoreCounter.AddScore(25);
                 Destroy(gameObject);
             }
@@ -67,7 +74,10 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Shield") || collision.gameObject.CompareTag("Dupochron"))
+        {
+            ScoreCounter.ComboBreak();
             Destroy(gameObject);
+        }
     }
 
     private void Reflect()

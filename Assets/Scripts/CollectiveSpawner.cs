@@ -29,7 +29,7 @@ public class CollectiveSpawner : MonoBehaviour
             //do
             //{
                 spawn = Random.insideUnitCircle.normalized * 15f;
-                dir = (Vector2.zero - spawn).normalized;
+                dir = (Vector2.zero - spawn).normalized; 
             //    yield return new WaitForEndOfFrame();
             //} while (Physics2D.Raycast(spawn, dir, 15f, enemyLayer));
 

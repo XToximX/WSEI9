@@ -1,14 +1,22 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class EnemyShoot : MonoBehaviour
 {
+    [SerializeField] GameObject particle;
     [SerializeField] string enemyType;
     [SerializeField] Transform shootingPoint;
     [SerializeField] float fireRate = 1f;
     [SerializeField] GameObject bulletPrefab;
+    [SerializeField] SoundMgr soundMgr;
     private GameObject player;
     private GameObject lvlUpMenu;
+
+    public Vector3 targetPos;
+    private bool isShooting = false;
+
+    Vector2 velocity = Vector2.zero;
 
 
     private GameObject bullet;
@@ -24,14 +32,20 @@ public class EnemyShoot : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, q + 180f);
 
 
-        StartCoroutine(Shooting());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (bullet == null)
-            //bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        if (transform.position != targetPos)
+        {
+            transform.position = Vector2.SmoothDamp(transform.position, targetPos, ref velocity, 0.5f);
+        }
+        else if(!isShooting)
+        {
+            StartCoroutine(Shooting());
+            isShooting = true;
+        }
     }
 
     IEnumerator Shooting()
@@ -53,6 +67,8 @@ public class EnemyShoot : MonoBehaviour
         {
             ScoreCounter.AddScore(25);
             ScoreCounter.enemiesKilled++;
+            GameObject.FindGameObjectWithTag("Sound").GetComponent<SoundMgr>().PlaySFX(5);
+            Instantiate(particle, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
